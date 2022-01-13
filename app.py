@@ -21,7 +21,7 @@ if(ourPath):
     os.chdir(ourPath)
     os.system('scrapy crawl news')
 
-data = pd.read_json('newslinks.json', orient= 'dictionary')
+data = pd.read_json('file:///c:/Users/dell/Desktop/newslink_tfidf/newslink/newslinks.json')
 # Filter the video content
 data1 = data[data['heading'] != 'video']
 data1.reset_index(inplace=True, drop= True)
