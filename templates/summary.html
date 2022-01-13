@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <h1 style="text-align: center;"> Article Summary</h1>
+
+        <table>
+            {% for table in tables %}
+            {{ table|safe}}
+            {% endfor %}
+        </table>
+
+        <style>
+            body{
+                background-image:url("{{url_for('static',filename = 'soft-face-gradation-blur-wallpaper-preview.jpg') }}");
+                height: 100% ;
+                
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat:repeat;
+                background-size: 100% 120%;
+            }
+
+            table{
+                text-align:left;
+                font-size:medium;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                padding: 20px;
+                table-layout: fixed;
+                color:black;
+            }
+        </style>
+               
+    </body>
+</html>

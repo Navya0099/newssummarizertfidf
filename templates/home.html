@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <!-- You can add your title below -->
+        
+        <title style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">News Article Summarizer</title>
+        <link rel="icon" type="image/jpg" sizes="256x256" href="assets/img/profile.jpg">
+        <link rel="icon" type="image/jpg" sizes="256x256" href="assets/img/profile.jpg">
+        <link rel="icon" type="image/jpg" sizes="256x256" href="assets/img/profile.jpg">
+        <link rel="icon" type="image/jpg" sizes="256x256" href="assets/img/profile.jpg">
+        <link rel="icon" type="image/jpg" sizes="256x256" href="assets/img/profile.jpg">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+        <link rel="stylesheet" href="assets/css/styles.min.css">
+        
+    </head>
+
+    <body style="background-color:ivory">
+        </div>
+        <br>
+        <br>
+        <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-weight: 200; text-decoration: dashed;"> News Article Summarizer</h1>
+        <br>
+        <h3 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color:steelblue; font-weight: 100;">
+             <p>
+                 Reading the entire news Articles is sometimes cumbersome & time taking in busy lives.
+                 <br>
+                 This is a small attempt to collect the news articles on BBC.
+                
+            </p>
+            <p>
+                Apart from original articles, this webapp provides the short summary of the news articles using NLP
+                Techniques.
+                <br>
+                The articles are grouped into different categories based on their tags on original website.
+                <br>
+
+                Enjoy the reading !
+
+            </p>
+                
+        </h3>
+
+        </div> 
+        <form id="package_form" action="/summary" method="post">
+            <div class="button">
+                <input type ="submit" name="action" value="Check Headlines Summary">
+                <input type ="submit" name="action" value="Check News & Sports Summary">
+                <input type ="submit" name="action" value="Check Indian News Summary">
+                <br>
+                <input type ="submit" name="action" value="Check Editor Choice Summary">
+                <input type ="submit" name="action" value="Check More BBC News">
+                <input type ="submit" name="action" value="Check Special News">
+                <br>
+                <br>
+            </div>
+            <br>
+            <br>
+       </form>
+        <table>   
+            {% for table in tables %}
+            {{ table|safe}}
+            {% endfor %}
+        </table>
+
+        <p class='footer-description'>©2021 navya pathipaka</p>
+               
+        <style>
+    
+            body{
+                background-image:url("{{url_for('static',filename = 'red-blue-soft-pastel-wallpaper-preview.jpg') }}");
+                height: 100% ;
+                
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat:repeat;
+                background-size: 100% 120%;
+            }
+
+            body{
+                font-family: Arial, Helvetica,sans-serif;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+	            height: 100%;
+	            display: flex;
+	            flex-direction: column;
+            }
+
+
+            .container-heading
+            {
+                margin: 0;
+            }
+
+            #first {
+                width: 300px;
+                height: 50px;
+                text-align: center;
+                border-radius: 14px;
+                font-size: 18px;
+            }
+
+            .heading_font{
+
+                font-size: 40px;
+            }
+
+            table{
+                text-align:left;
+                font-size:medium;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                padding: 20px;
+                table-layout: fixed;
+                border-bottom: 1px solid #ddd;
+                color:black;
+                
+            }
+            .button button {
+                background-color: #04AA6D; /* Green background */
+                border: 1px solid green; /* Green border */
+                color: white; /* White text */
+                padding: 10px 24px; /* Some padding */
+                cursor: pointer; /* Pointer/hand icon */
+                float: left; /* Float the buttons side by side */
+            }
+
+            .button button:not(:last-child) {
+                border-right: none; /* Prevent double borders */
+            }
+
+/* Clear floats (clearfix hack) */
+            .button:after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+        </style>
+    </body>
+</html>
